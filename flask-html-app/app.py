@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, jsonify, redirect, url_for
 from flask_pymongo import PyMongo
+
 import listing 
 
 app = Flask(__name__, static_folder='flask-html-app\static')
@@ -23,6 +24,7 @@ listing.add_listing(mongo, "The Hub", "1111 place dr", "wwww.place.com",
 
 @app.route('/')
 def home():
+
     listings = list(mongo.db.location_data.find())
     return render_template('index.html', listings=listings)  # Render the index.html file
 

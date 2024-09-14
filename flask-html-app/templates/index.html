@@ -34,7 +34,7 @@ h1{
   display: flex;
   align-items: center;
   justify-content: center;
-
+  text-align: center;
 
 }
 
@@ -69,7 +69,9 @@ h1{
 
 .white-box {
   background-color: white; /* Solid white background */
-  padding: 20px; /* Adds padding inside the box */
+
+  padding: 50px; /* Adds padding inside the box */
+
   border-radius: 15%; /* Rounds the corners 15% */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for a slight 3D effect */
   display: inline-block; /* Makes the box fit the content */
@@ -92,6 +94,7 @@ h1{
   padding: 5px;
   border-radius: 5px;
 }
+
 
 img.main_picture {
   max-width: 100%; /* Ensures the image stays within the box */
@@ -122,9 +125,11 @@ img.main_picture {
   color: rgb(252, 252, 252);
 
 .listings_list {
+
     flex-wrap: wrap; /* Allows items to wrap on new lines if necessary */
     gap: 20px; /* Spacing between the items */
     list-style-type: none; /* Removes default bullets */
+
     padding: 0;
     margin: 0;
     justify-content: center;
@@ -144,17 +149,23 @@ img.main_picture {
 .item-card {
     background-color: #f9f9f9;
     border: 1px solid #ddd;
+
     border-radius: 10px; /* Rounded corners */
     padding: 20px;
     width: 40%; /* Card width */
     text-align: center; /* Centers the text */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
     transition: transform 0.3s ease; /* Animation for hover effect */
+
     margin: 5%;
 }
 
 .item-card:hover {
+
     transform: translateY(-5px); /* Lifts the card when hovered */
+
+.cent {
+  text-align: center;
 }
 
 .item-card p {
@@ -181,13 +192,17 @@ img.main_picture {
       </div>-->
       
     </div>
-
+    <div class="content"></div>
+    <div class="FadeAway"></div>
+    
 <!--main page/search bar-->
     <div class="container">
 
           <ul> 
       <div class = "white-box">
-        <h1>Hokies Way Home</h1>
+
+        <h1>Your new home away from home.</h1>
+
         <nav id = "navigationbar">
           <h2 class="logo"><a href="main_page.html"></a>
             <img src="{{ url_for('static', filename='images/logo_image.png') }}" alt="logo">
@@ -205,11 +220,13 @@ img.main_picture {
       <img class="main_picture" src="https://github.com/dtahero/hokiesWayHome/blob/main/flask-html-app/static/images/main_image2.jpg?raw=true">
     </div>
     <ul class="listings_list">
+
       {% for listing in listings %}
           <li class="item-card">
               <a href="{{ url_for('listingdisplay', listing_name=listing.name)}}">{{ listing.name }}</a>
           </li>
       {% endfor %}
+
   </ul>
   
     
