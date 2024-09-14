@@ -116,15 +116,22 @@ h1{
 
 <!--main page/search bar-->
     <div class="container">
+
+          <ul> 
+      <header>
+        <h1>Hokies Way Home</h1>
+        <nav id = "navigationbar">
+          <h2 class="logo"><a href="main_page.html"></a>
+            <img src="{{ url_for('static', filename='images/logo_image.png') }}" alt="logo">
+          </h2>
           <ul> 
             <li><a href="favorites.html">Favorites</a> </li>
             <li><a href="profile.html">Profile</a> </li>
-
           </ul>
         </nav>
       
       <form action="" class="search-bar">
-        <input type="text" placeholder="search" name="q"
+        <input type="text" placeholder="search" name="q">
         <button type="submit"></button>
       </form>
       <img class="main_picture" src="images/main_image.png">

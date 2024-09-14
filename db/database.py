@@ -22,11 +22,11 @@ location_data_collection = db["location_data"]
 """
 Listing data can look like this:
 {
-    address: {
+    address: [
         address_line_1,
         address_line_2,
         zip_code
-    },
+    ],
     website_link: something,
     office_hours: {
         sat: something
