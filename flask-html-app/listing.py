@@ -23,7 +23,7 @@ class Listing:
         #array for all listingss
         Listing.allListings.append(self)
     
-def add_listing(mongo, name: str, address: list, website_link, office_hours: dict, 
+def add_listing(mongo, name: str, address: list, website_link, 
                 bed: float, bath: float, monthly_rent: int, utilities: list, amenities: list, 
                 bus_stop_distance: int, campus_distance: int, grocery_store_distance: int, 
                 link_to_image: str, parking_pass_needed: bool):
