@@ -54,8 +54,6 @@ h1{
   align-items: top;
   border-radius: 60px;
   padding: 10px, 20px;
-  backdrop-filter: blur(4px) saturate(180%);
-
 }
 
 .search-bar input{
@@ -69,19 +67,42 @@ h1{
   
 }
 
-::placeholder(){
-  color: #cac7ff;
+.white-box {
+  background-color: white; /* Solid white background */
+  padding: 20px; /* Adds padding inside the box */
+  border-radius: 15%; /* Rounds the corners 15% */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for a slight 3D effect */
+  display: inline-block; /* Makes the box fit the content */
+  width: 80%; /* Adjusts the width of the box */
+  margin: 20px auto; /* Centers the div horizontally with margin */
 }
 
+#navigationbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
+.search-bar input {
+  padding: 5px;
+  border-radius: 5px;
+}
 
-/* Add a background color to the top navigation */
+.search-bar button {
+  padding: 5px;
+  border-radius: 5px;
+}
+
+img.main_picture {
+  max-width: 100%; /* Ensures the image stays within the box */
+  border-radius: 10px; /* Optional rounded corners for the image */
+}
+
 .topnav {
   background-color: rgb(134, 31, 65);
   overflow: hidden;
 }
 
-/* Style the links inside the navigation bar */
 .topnav a {
   float: left;
   color: #f2f2f2;
@@ -91,16 +112,56 @@ h1{
   font-size: 17px;
 }
 
-/* Change the color of links on hover */
 .topnav a:hover {
   background-color: rgb(134, 31, 65);
   color: rgb(255, 255, 255);
 }
 
-/* Add a color to the active/current link */
 .topnav a.active {
   background-color: rgb(134, 31, 65);
   color: rgb(252, 252, 252);
+
+.listings_list {
+    flex-wrap: wrap; / Allows items to wrap on new lines if necessary /
+    gap: 20px; / Spacing between the items /
+    list-style-type: none; / Removes default bullets /
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center; /* Centers the image horizontally */
+  align-items: center;     /* (Optional) Centers the image vertically if the container has a set height */
+}
+
+.logo {
+  width: 30%; /* Set the logo size to 30% of its parent container */
+  max-width: 100%; /* Ensures the image doesn't get larger than the original size */
+}
+
+.item-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px; / Rounded corners /
+    padding: 20px;
+    width: 40%; / Card width /
+    text-align: center; / Centers the text /
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); / Adds a subtle shadow /
+    transition: transform 0.3s ease; / Animation for hover effect /
+    margin: 5%;
+}
+
+.item-card:hover {
+    transform: translateY(-5px); / Lifts the card when hovered /
+}
+
+.item-card p {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+}
 }
 </style>
 
@@ -115,37 +176,49 @@ h1{
       <a href="#news">News</a>
       <a href="#contact">Contact</a>
       <a href="#about">About</a>
-      <!--<h2 class="logo_click"><a href="main_page.html"></a>-->
-        <img class="logo" src="static/images/logo_image.png">
-      </h2>
+       <!--<div class="logo-container"><a href="index.html"></a>
+          <img class="logo" src="https://github.com/dtahero/hokiesWayHome/blob/main/flask-html-app/static/images/logo_image.png?raw=true" alt="Logo Image">
+      </div>-->
+      
     </div>
 
 <!--main page/search bar-->
     <div class="container">
 
           <ul> 
-      <header>
+      <div class = "white-box">
         <h1>Hokies Way Home</h1>
         <nav id = "navigationbar">
+          <h2 class="logo"><a href="main_page.html"></a>
             <img src="{{ url_for('static', filename='images/logo_image.png') }}" alt="logo">
           </h2>
           <ul> 
-           <!--<li><a href="favorites.html">Favorites</a> </li>
+            <li><a href="favorites.html">Favorites</a> </li>
             <li><a href="profile.html">Profile</a> </li>
-          </ul>-->
+          </ul>
         </nav>
       
       <form action="" class="search-bar">
         <input type="text" placeholder="search" name="q">
         <button type="submit"></button>
       </form>
-      <img class="main_picture" src="static/images/main_image.png">
-      <ul></ul>
-        {% for item in data %}
-            <li>{{ item.name }}</li>
-        {% endfor %}
-    </ul>
+      <img class="main_picture" src="https://github.com/dtahero/hokiesWayHome/blob/main/flask-html-app/static/images/main_image2.jpg?raw=true">
     </div>
+    <ul class="listings_list">
+      <li class="item-card">
+        <button onclick="location.href='#'"></button>
+    </li>
+      <li class="item-card">
+          <button onclick="location.href='#'">Foxridge</button>
+      </li>
+      <li class="item-card">
+          <button onclick="location.href='#'">Hunters Ridge</button>
+      </li>
+      <li class="item-card">
+          <button onclick="location.href='#'">The Hub</button>
+      </li>
+  </ul>
+  
+    
   </body>
 </html>
-
