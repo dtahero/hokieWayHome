@@ -34,13 +34,13 @@ Listing data can look like this:
         and so on you get the idea
     },
     bed_and_bath: something (should be in form {bed}/{bath}),
-    monthly_rent_price: something,
+    monthly_rent: something,
     utilities: [something, something, something],
     amenities: [something, something, something],
-    bus_stop_distance: something,
-    campus_distance: something,
-    grocery_store_distance,
-    link_to_img: need to find image link,
+    bus_stop_distance: something, (in minutes driving)
+    campus_distance: something, (in minutes driving)
+    grocery_store_distance: something, (in minutes driving)
+    link_to_img: filepath to that image in filesystem
     parking_pass_needed: bool
 }
 """
