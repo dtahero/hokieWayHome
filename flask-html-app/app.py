@@ -9,6 +9,27 @@ mongo = PyMongo(app)
 def home():
     return render_template('index.html')  # Render the index.html file
 
+@app.route('/signin')
+def signin():
+    return render_template('signin.html')  # Render the signin.html file
+
+@app.route('/signup')
+def signup():
+    return render_template('signup.html')  
+
+@app.route('/forgotpass')
+def signup():
+    return render_template('forgotpass.html')  
+
+@app.route('/loginmenu')
+def signup():
+    return render_template('loginmenu.html')  
+
+@app.route('/listingdisplay')
+def signup():
+    return render_template('listingdisplay.html')  
+
+
 
 """
 Code to create a new user in our database. Java input looks like:
