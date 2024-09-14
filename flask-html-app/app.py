@@ -18,15 +18,15 @@ def signup():
     return render_template('signup.html')  
 
 @app.route('/forgotpass')
-def signup():
+def forgotpass():
     return render_template('forgotpass.html')  
 
 @app.route('/loginmenu')
-def signup():
+def loginmenu():
     return render_template('loginmenu.html')  
 
 @app.route('/listingdisplay')
-def signup():
+def listingdisplay():
     return render_template('listingdisplay.html')  
 
 
