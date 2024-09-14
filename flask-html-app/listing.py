@@ -2,14 +2,13 @@
 class Listing:
     allListings = []
     
-    def __init__(self, name: str, address: list, website_link: str, office_hours: list, 
+    def __init__(self, name: str, address: list, website_link: str, 
                  bath: int, bed: int, price: float, utilities: list, ammenities: str,
                  bus_stop_distance: int, campus_distance: int, grocery_store_distance: int,
                  link_to_img: str, parking_pass_needed: bool):
         self.name = name
         self.address = address
         self.website_link = website_link
-        self.office_hours = office_hours
         self.bath = bath
         self.bed = bed
         self.price = price
@@ -37,15 +36,6 @@ def add_listing(mongo, name: str, address: list, website_link, office_hours: dic
             address[2]
         ],
         "website_link": website_link,
-        "office_hours": {
-            "Saturday": office_hours["sat"],
-            "Sunday": office_hours["sun"],
-            "Monday": office_hours["mon"],
-            "Tuesday": office_hours["tue"],
-            "Wednesday": office_hours["wed"],
-            "Thursday": office_hours["thu"],
-            "Friday": office_hours["fri"]
-        },
         "bed": bed,
         "bath": bath,
         "monthly_rent": monthly_rent,
@@ -60,9 +50,7 @@ def add_listing(mongo, name: str, address: list, website_link, office_hours: dic
 
     result = mongo.db.location_data.insert_one(data)
     
-    print(f"Inserted document with id: {result.inserted_id}")
-    
-    Listing(name, address, website_link, office_hours, 
+    Listing(name, address, website_link, 
             bed, bath, monthly_rent, utilities, amenities, 
             bus_stop_distance, campus_distance, grocery_store_distance, 
             link_to_image, parking_pass_needed)
