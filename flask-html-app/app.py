@@ -6,6 +6,7 @@ app = Flask(__name__, static_folder='flask-html-app\static')
 app.config["MONGO_URI"] = "mongodb://localhost:27017/hokie_way_db"
 mongo = PyMongo(app)
 
+mongo.db.create_collection('location_data')
 mongo.db.location_data.drop()
 
 listing.add_listing(mongo, "Foxridge", "1111 place dr", "wwww.place.com", 
@@ -43,7 +44,6 @@ def loginmenu():
 
 @app.route('/<listing_name>', methods=['GET'])
 def listingdisplay(listing_name):
-    print("I AM IN THIS FUNCTION")
     listing = mongo.db.location_data.find_one({"name": listing_name})
     if listing:
         return render_template('listingdisplay.html', listing=listing)
