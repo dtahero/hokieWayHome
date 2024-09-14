@@ -130,6 +130,17 @@ img.main_picture {
     justify-content: center;
 }
 
+.logo-container {
+  display: flex;
+  justify-content: center; /* Centers the image horizontally */
+  align-items: center;     /* (Optional) Centers the image vertically if the container has a set height */
+}
+
+.logo {
+  width: 30%; /* Set the logo size to 30% of its parent container */
+  max-width: 100%; /* Ensures the image doesn't get larger than the original size */
+}
+
 .item-card {
     background-color: #f9f9f9;
     border: 1px solid #ddd;
@@ -165,9 +176,10 @@ img.main_picture {
       <a href="#news">News</a>
       <a href="#contact">Contact</a>
       <a href="#about">About</a>
-      <h2 class="logo_click"><a href="main_page.html"></a>
-        <img class="logo" src="images/logo_image.png">
-      </h2>
+       <!--<div class="logo-container"><a href="index.html"></a>
+          <img class="logo" src="https://github.com/dtahero/hokiesWayHome/blob/main/flask-html-app/static/images/logo_image.png?raw=true" alt="Logo Image">
+      </div>-->
+      
     </div>
 
 <!--main page/search bar-->
@@ -190,14 +202,24 @@ img.main_picture {
         <input type="text" placeholder="search" name="q">
         <button type="submit"></button>
       </form>
-      <img class="main_picture" src="images/main_image.png">
+      <img class="main_picture" src="https://github.com/dtahero/hokiesWayHome/blob/main/flask-html-app/static/images/main_image2.jpg?raw=true">
     </div>
-
     <ul class="listings_list">
-      {% for item in data %}
-          <li class="item-card">{{ item.name }}</li>
-      {% endfor %}
+      <li class="item-card">
+        <button onclick="location.href='#'"></button>
+    </li>
+      <li class="item-card">
+          <button onclick="location.href='#'">Foxridge</button>
+      </li>
+      <li class="item-card">
+          <button onclick="location.href='#'">Hunters Ridge</button>
+      </li>
+      <li class="item-card">
+          <button onclick="location.href='#'">The Hub</button>
+      </li>
   </ul>
+  
+    
   </body>
 </html>
 
