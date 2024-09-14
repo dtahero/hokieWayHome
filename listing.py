@@ -11,7 +11,7 @@ class Listing:
         self.electricity = electricity
         self.ammenities = ammenities
         
-        #array for all listings
+        #array for all listingss
         Listing.allListings.append(self)
     
 
