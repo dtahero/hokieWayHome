@@ -6,8 +6,6 @@ app = Flask(__name__, static_folder='flask-html-app\static')
 app.config["MONGO_URI"] = "mongodb://localhost:27017/hokie_way_db"
 mongo = PyMongo(app)
 
-currentlyViewing = None
-
 
 listing.add_listing(mongo, "Foxridge", "1111 place dr", "wwww.place.com", 
             2, 3, 700.0, ["gas, electricity"], ["pool"], 12, 15, 2, 
@@ -41,19 +39,14 @@ def forgotpass():
 def loginmenu():
     return render_template('loginmenu.html')  
 
-data = {
-    "listings": listing.Listing.allListings,
-    "viewing_apartment": currentlyViewing
-}
+@app.route('/listing/<listing_name>')
+def listingdisplay(name):
+    listing = mongo.db.location_data.find_one({"name": name})
+    if listing:
+        return render_template('listingdisplay.html', listing=listing)
+    else:
+        return "Animal not found", 404
 
-@app.route('/listingdisplay')
-def listingdisplay():
-    return render_template('listingdisplay.html', data=data)  
-
-@app.route('/save_apartment_viewing', methods=['POST'])
-def save_apartment_viewing():
-    data = request.json
-    currentlyViewing = data.name
 
 """
 Code to create a new user in our database. Java input looks like:
