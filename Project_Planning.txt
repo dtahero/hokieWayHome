@@ -6,7 +6,7 @@ Database - MongoDB?
 Backend - Flask, Django, other?
 Frontend - JavaScript
 
-Backend: database, Map API, 
+Backend: database (mostly storing data)
 Frontend: login, searchbar, cookies, bookmarking
 
 Listings should include
