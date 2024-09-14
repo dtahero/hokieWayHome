@@ -72,4 +72,4 @@ def get_user_saved_places():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000)
