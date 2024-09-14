@@ -16,7 +16,7 @@ h1{
 .container{
   width:100%;
   height: 100%;
-  padding: 8%;
+  padding:30%;
   background: linear-gradient(rgba(164, 32, 9, 0.9), rgba(220, 108, 4, 0.9));
   background-position: center;
   background-size: cover;
@@ -42,7 +42,7 @@ h1{
   display: flex;
   align-items: top;
   border-radius: 60px;
-  padding: 10px, 15px;
+  padding: 10px, 20px;
 }
 
 .search-bar input{
@@ -58,7 +58,7 @@ h1{
 
 
 
-/* Add a black background color to the top navigation */
+/* Add a background color to the top navigation */
 .topnav {
   background-color: rgb(134, 31, 65);
   overflow: hidden;
