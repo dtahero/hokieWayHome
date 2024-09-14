@@ -10,11 +10,11 @@ mongo.db.create_collection('location_data')
 mongo.db.location_data.drop()
 
 listing.add_listing(mongo, "Foxridge", "1111 place dr", "wwww.place.com", 
-            2, 3, 700.0, ["gas, electricity"], ["pool"], 12, 15, 2, 
+            2, 3, 700.0, ["gas, electricity, internet"], ["pool, gym"], 12, 15, 2, 
             "not a real filepath", True)
 
 listing.add_listing(mongo, "Hunters Ridge", "1111 place dr", "wwww.place.com", 
-            2, 3, 700.0, ["gas, electricity"], ["pool"], 12, 15, 2, 
+            2, 3, 700.0, ["gas, electricity"], ["gym, outdoor common area"], 12, 15, 2, 
             "not a real filepath", True)
 
 listing.add_listing(mongo, "The Hub", "1111 place dr", "wwww.place.com", 
