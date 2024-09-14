@@ -9,6 +9,7 @@ mongo = PyMongo(app)
 def home():
     return render_template('index.html')  # Render the index.html file
 
+
 """
 Code to create a new user in our database. Java input looks like:
 {
@@ -70,6 +71,7 @@ def get_user_saved_places():
     else:
         return jsonify({"message": "No saved places found"}), 404
 
-
+app.static_folder = 'static'
+      
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
