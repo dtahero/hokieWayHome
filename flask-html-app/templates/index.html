@@ -67,7 +67,36 @@ h1{
   
 }
 
+.white-box {
+  background-color: white; /* Solid white background */
+  padding: 20px; /* Adds padding inside the box */
+  border-radius: 15%; /* Rounds the corners 15% */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for a slight 3D effect */
+  display: inline-block; /* Makes the box fit the content */
+  width: 80%; /* Adjusts the width of the box */
+  margin: 20px auto; /* Centers the div horizontally with margin */
+}
 
+#navigationbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-bar input {
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.search-bar button {
+  padding: 5px;
+  border-radius: 5px;
+}
+
+img.main_picture {
+  max-width: 100%; /* Ensures the image stays within the box */
+  border-radius: 10px; /* Optional rounded corners for the image */
+}
 
 /* Add a background color to the top navigation */
 .topnav {
@@ -118,7 +147,7 @@ h1{
     <div class="container">
 
           <ul> 
-      <header>
+      <div class = "white-box">
         <h1>Hokies Way Home</h1>
         <nav id = "navigationbar">
           <h2 class="logo"><a href="main_page.html"></a>
