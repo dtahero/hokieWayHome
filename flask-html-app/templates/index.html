@@ -98,13 +98,11 @@ img.main_picture {
   border-radius: 10px; /* Optional rounded corners for the image */
 }
 
-/* Add a background color to the top navigation */
 .topnav {
   background-color: rgb(134, 31, 65);
   overflow: hidden;
 }
 
-/* Style the links inside the navigation bar */
 .topnav a {
   float: left;
   color: #f2f2f2;
@@ -114,16 +112,45 @@ img.main_picture {
   font-size: 17px;
 }
 
-/* Change the color of links on hover */
 .topnav a:hover {
   background-color: rgb(134, 31, 65);
   color: rgb(255, 255, 255);
 }
 
-/* Add a color to the active/current link */
 .topnav a.active {
   background-color: rgb(134, 31, 65);
   color: rgb(252, 252, 252);
+
+.listings_list {
+    flex-wrap: wrap; / Allows items to wrap on new lines if necessary /
+    gap: 20px; / Spacing between the items /
+    list-style-type: none; / Removes default bullets /
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+}
+
+.item-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px; / Rounded corners /
+    padding: 20px;
+    width: 40%; / Card width /
+    text-align: center; / Centers the text /
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); / Adds a subtle shadow /
+    transition: transform 0.3s ease; / Animation for hover effect /
+    margin: 5%;
+}
+
+.item-card:hover {
+    transform: translateY(-5px); / Lifts the card when hovered /
+}
+
+.item-card p {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+}
 }
 </style>
 
@@ -165,6 +192,12 @@ img.main_picture {
       </form>
       <img class="main_picture" src="images/main_image.png">
     </div>
+
+    <ul class="listings_list">
+      {% for item in data %}
+          <li class="item-card">{{ item.name }}</li>
+      {% endfor %}
+  </ul>
   </body>
 </html>
 
