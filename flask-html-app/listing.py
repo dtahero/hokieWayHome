@@ -28,13 +28,14 @@ def add_listing(mongo, name: str, address: list, website_link, office_hours: dic
                 bed: float, bath: float, monthly_rent: int, utilities: list, amenities: list, 
                 bus_stop_distance: int, campus_distance: int, grocery_store_distance: int, 
                 link_to_image: str, parking_pass_needed: bool):
+    
     data = {
         "name": name,
-        "address": {
+        "address": [
             address[0],
             address[1],
             address[2]
-        },
+        ],
         "website_link": website_link,
         "office_hours": {
             "Saturday": office_hours["sat"],
@@ -56,5 +57,14 @@ def add_listing(mongo, name: str, address: list, website_link, office_hours: dic
         "link_to_img": link_to_image,
         "parking_pass_needed": parking_pass_needed
     }
+
+    result = mongo.db.location_data.insert_one(data)
     
-    mongo.db.location_data.insert_one(data)
+    print(f"Inserted document with id: {result.inserted_id}")
+    
+    Listing(name, address, website_link, office_hours, 
+            bed, bath, monthly_rent, utilities, amenities, 
+            bus_stop_distance, campus_distance, grocery_store_distance, 
+            link_to_image, parking_pass_needed)
+    
+    
