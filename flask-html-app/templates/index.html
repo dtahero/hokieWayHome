@@ -34,7 +34,7 @@ h1{
   display: flex;
   align-items: center;
   justify-content: center;
-
+  text-align: center;
 
 }
 
@@ -157,6 +157,11 @@ img.main_picture {
     transform: translateY(-5px); / Lifts the card when hovered /
 }
 
+.cent
+{
+  text-align: center;
+}
+
 .item-card p {
     margin: 0;
     font-size: 16px;
@@ -187,7 +192,7 @@ img.main_picture {
 
           <ul> 
       <div class = "white-box">
-        <h1>Hokies Way Home</h1>
+        <h1>Your new home away from home.</h1>
         <nav id = "navigationbar">
           <h2 class="logo"><a href="main_page.html"></a>
             <img src="{{ url_for('static', filename='images/logo_image.png') }}" alt="logo">
@@ -205,18 +210,18 @@ img.main_picture {
       <img class="main_picture" src="https://github.com/dtahero/hokiesWayHome/blob/main/flask-html-app/static/images/main_image2.jpg?raw=true">
     </div>
     <ul class="listings_list">
-      <li class="item-card">
+      <ul class="item-card">
         <button onclick="location.href='#'"></button>
-    </li>
-      <li class="item-card">
+    </ul>
+      <ul class="item-card">
           <button onclick="location.href='#'">Foxridge</button>
-      </li>
-      <li class="item-card">
+      </ul>
+      <ul class="item-card">
           <button onclick="location.href='#'">Hunters Ridge</button>
-      </li>
-      <li class="item-card">
+      </ul>
+      <ul class="item-card">
           <button onclick="location.href='#'">The Hub</button>
-      </li>
+      </ul>
   </ul>
   
     
