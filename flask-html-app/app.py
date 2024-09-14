@@ -3,7 +3,7 @@ from flask_pymongo import PyMongo
 import listing
 
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='flask-html-app\static')
 app.config["MONGO_URI"] = "mongodb://localhost:27017/hokie_way_db"
 mongo = PyMongo(app)
 
