@@ -1,7 +1,7 @@
 *{
   margin: 0;
   padding: 0;
-  box-sizing: 0;
+  box-sizing: border-box;
 
 }
 h1{
@@ -10,7 +10,6 @@ h1{
   font-size: 40px;
   font-family: IBM Plex Serif;
   margin:0;
-  padding: 0;
   
 }
 
@@ -28,8 +27,12 @@ h1{
 
 }
 
+
+
 .main_picture{
   border-radius: 10px;
+  height: 100%;
+  width: 100%;
 }
 
 .search-bar{
@@ -39,7 +42,7 @@ h1{
   display: flex;
   align-items: top;
   border-radius: 60px;
-  padding: 5px, 10px;
+  padding: 10px, 15px;
 }
 
 .search-bar input{
@@ -51,4 +54,34 @@ h1{
   font-size: 20px;
   color: #cac7ff
   
+}
+
+
+
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: rgb(134, 31, 65);
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: rgb(134, 31, 65);
+  color: rgb(255, 255, 255);
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: rgb(134, 31, 65);
+  color: rgb(252, 252, 252);
 }
