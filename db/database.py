@@ -13,10 +13,8 @@ User data should look like this:
     firstName: something,
     lastName: something,
     email: something,
-    username: something,
-    password: something,
     saved_places = [something, something, something],
-    recently_viewed_pages = [something, something, something]
+    (maybe) recently_viewed_pages = [something, something, something]
 }
 """
 
@@ -46,9 +44,3 @@ Listing data can look like this:
     parking_pass_needed: bool
 }
 """
-
-mydict = { "name": "John", "address": "Highway 37" }
-
-x = user_data_collection.insert_one(mydict)
-
-print(client.list_database_names())
