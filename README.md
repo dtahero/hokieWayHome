@@ -1,4 +1,4 @@
-# wayHome
+# hokiesWayHome
 Find your home away from home!
 
 Team Members:

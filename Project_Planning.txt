@@ -1,0 +1,47 @@
+Categories: 
+MLH: PAutho, AI, Logo
+VT: Real Estate (Costar), Affordable Housing (Microsoft)
+
+Database - MongoDB?
+Backend - Flask, Django, other?
+Frontend - JavaScript
+
+Backend: database, Map API, 
+Frontend: login, searchbar, cookies, bookmarking
+
+Listings should include
+Address
+Website
+Hours their office is open
+Bed/bath count
+Prices
+Utilities
+Amenities
+Bus stop distance
+Campus distance (To burrus hall from address?)
+Roommates??? (Maybe an extra feature)
+Picture
+Grocery store distance
+Parking pass?
+User reviews?
+
+Database should store
+User information (phone, email, etc?)
+Saved locations
+Save their filters? Maybe provide as option
+Review section from users
+save places they have looked at? suggest again?
+
+Front end
+
+LOGIN:
+pfp
+user name
+password
+forget passwords
+
+create account button that brings you to the account password
+-> we have the name, email, username, password
+
+for the forget password have the email 
+then a change password button
