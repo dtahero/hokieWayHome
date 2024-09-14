@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, jsonify
 from flask_pymongo import PyMongo
+from listing import allListings
 
 app = Flask(__name__, static_folder='flask-html-app\static')
 app.config["MONGO_URI"] = "mongodb://localhost:27017/hokie_way_db"
@@ -7,7 +8,7 @@ mongo = PyMongo(app)
 
 @app.route('/')
 def home():
-    return render_template('index.html')  # Render the index.html file
+    return render_template('index.html',allListings=allListings)  # Render the index.html file
 
 @app.route('/signin')
 def signin():
