@@ -41,6 +41,10 @@ def add_listing_data(mongo):
                 2, 3, 900.0, ["Electricity"], ["Pool", "Gym", ], 12, 15, 2, 
                 "not a real filepath", "Yes")
     
-    add_listing(mongo, "The Hub", ["1201 Snyder Lane", "Blacksburg, VA 24060"], "https://huboncampus.com/blacksburg/", 
-                2, 3, 900.0, ["Electricity"], ["Pool", "Gym", ], 12, 15, 2, 
+    add_listing(mongo, "Alight", ["1600 Patrick Hendry Dr", "Blacksburg, VA 24060"], "https://alight-blacksburg.com/", 
+                2, 3, 1000.0, ["Water, Electricity"], ["Pool", "Gym", ], 12, 15, 2, 
+                "not a real filepath", "Yes")
+    
+    add_listing(mongo, "The Retreat", ["1800 Redd Road", "Blacksburg, VA 24060"], "https://www.retreatatblacksburg.com/", 
+                2, 3, 1000.0, ["Water, Electricity"], ["Pool", "Gym", ], 12, 15, 2, 
                 "not a real filepath", "Yes")
