@@ -16,21 +16,9 @@ def home():
     listings = list(mongo.db.location_data.find())
     return render_template('index.html', listings=listings)  # Render the index.html file
 
-@app.route('/signin')
-def signin():
-    return render_template('signin.html')  # Render the signin.html file
-
-@app.route('/signup')
-def signup():
-    return render_template('signup.html')  
-
-@app.route('/forgotpass')
-def forgotpass():
-    return render_template('forgotpass.html')  
-
-@app.route('/loginmenu')
-def loginmenu():
-    return render_template('loginmenu.html')  
+@app.route('/aboutus')
+def aboutus():
+    return render_template('aboutus.html')  
 
 @app.route('/<listing_name>', methods=['GET'])
 def listingdisplay(listing_name):

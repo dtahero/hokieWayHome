@@ -1,0 +1,178 @@
+body {
+  background-image: url('https://github.com/dtahero/hokiesWayHome/blob/main/flask-html-app/static/images/main_image2.jpg?raw=true');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+
+}
+h1{
+color: rgb(101, 15, 9);
+text-align: center;
+font-size: 40px;
+font-family: IBM Plex Serif;
+margin:0;
+
+}
+
+.container{
+width:100%;
+height: 100%;
+/*padding: 15%;*/
+background: linear-gradient(rgba(164, 32, 9, 0.6), rgba(220, 108, 4, 0.6));
+background-position: center;
+background-size: cover;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+
+}
+
+
+
+.main_picture{
+border-radius: 10px;
+height: 100%;
+width: 100%;
+}
+
+.search-bar{
+width: 100%;
+max-width: 700px;
+background: rgb(255, 255, 255, 0.2);
+display: flex;
+align-items: top;
+border-radius: 60px;
+padding: 10px, 20px;
+}
+
+.search-bar input{
+background: transparent;
+flex: 1;
+border: 0;
+outline: none;
+padding: 24px, 20px;
+font-size: 20px;
+color: #cac7ff
+
+}
+
+.white-box {
+background-color: white;
+
+padding: 5%; /* Adds padding inside the box */
+
+border-radius: 13%; /* Rounds the corners 15% */
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for a slight 3D effect */
+display: flex;
+flex-direction: row;
+height: 1000px;
+width: calc(100%);  /*Adjusts the width of the box */
+margin: 20px auto;
+}
+
+
+#navigationbar {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.search-bar input {
+padding: 5px;
+border-radius: 5px;
+}
+
+.search-bar button {
+padding: 5px;
+border-radius: 5px;
+}
+
+
+img.main_picture {
+max-width: 100%; /* Ensures the image stays within the box */
+border-radius: 10px; /* Optional rounded corners for the image */
+}
+
+.topnav {
+background-color: rgb(134, 31, 65);
+overflow: hidden;
+}
+
+.topnav a {
+float: left;
+color: #f2f2f2;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+font-size: 17px;
+}
+
+.topnav a:hover {
+background-color: rgb(134, 31, 65);
+color: rgb(255, 255, 255);
+}
+
+.topnav a.active {
+background-color: rgb(134, 31, 65);
+color: rgb(252, 252, 252);
+}
+
+.listings_list {
+
+  flex-wrap: wrap; /* Allows items to wrap on new lines if necessary */
+  gap: 20px; /* Spacing between the items */
+  list-style-type: none; /* Removes default bullets */
+
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+}
+
+.logo-container {
+display: flex;
+justify-content: center; /* Centers the image horizontally */
+align-items: center;     /* (Optional) Centers the image vertically if the container has a set height */
+}
+
+.logo {
+width: 100%; /* Set the logo size to 30% of its parent container */
+/*max-width: 100%;  Ensures the image doesn't get larger than the original size */
+}
+
+.item-card {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+
+  border-radius: 10px; /* Rounded corners */
+  padding: 20px;
+  width: 40%; /* Card width */
+  text-align: center; /* Centers the text */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+  transition: transform 0.3s ease; /* Animation for hover effect */
+
+  margin: 5%;
+}
+
+.item-card:hover {
+
+  transform: translateY(-5px); /* Lifts the card when hovered */
+}
+
+.item-card p {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.cent {
+text-align: center;
+}

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hokies Way Home</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+<style>
+header {
+  background-color: white;
+}
+
+h1{
+  color: rgb(101, 15, 9);
+  text-align: center;
+  font-size: 40px;
+  font-family: IBM Plex Serif;
+  margin:0;
+}
+
+.topnav {
+  background-color: rgb(134, 31, 65);
+  overflow: hidden;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: rgb(134, 31, 65);
+  color: rgb(255, 255, 255);
+}
+
+.topnav a.active {
+  background-color: rgb(134, 31, 65);
+  color: rgb(252, 252, 252);
+
+}
+    .white-box {
+      background-color: white;
+      padding: 5%;
+      /* Adds padding inside the box */
+      border-radius: 20%;
+      /* Rounds the corners 15% */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      /* Optional shadow for a slight 3D effect */
+      display: flex;
+      flex-direction: row;
+      height: px;
+      width: 100%;
+      /*Adjusts the width of the box */
+      margin: 20px auto;
+    }
+
+    .flex-container {
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 30px;
+        text-align: center;
+      }
+
+      .flex-item-left {
+        background-color: #f1f1f1;
+        padding: 10px;
+        flex: 50%;
+      }
+
+    .the-flex-container {
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 30px;
+        text-align: center;
+      }
+
+      .the-flex-item-left {
+        background-color: #f1f1f1;
+        padding: 10px;
+        flex: 50%;
+      }
+
+      .flex-item-right {
+        background-color: dodgerblue;
+        padding: 10px;
+        flex: 50%;
+      }
+
+      body {
+      background-color: rgb(207, 69, 32);
+    }
+    
+
+
+
+
+</style>
+<body>
+<header>
+<h1>Hokies Way Home</h1>
+      </header>
+<!--navigation bar-->
+    <div class="topnav">
+      <a class="active" href="{{url_for('home')}}">Home</a>
+      <a href="#news">Profile</a>
+      <a href="{{url_for('aboutus')}}">About Us</a>
+      <a href="#contact">Contact</a>
+      
+    </div>
+
+<h1>
+    About the Hokies Way Home Team
+</h1>
+<!--this is our information-->
+
+<div class="container">
+    <div class="white-box">
+      <div class="flex-container">
+        <div class="flex-item-left">
+          <p>
+            We are a team of Virginia Tech students dedicated to 
+            using technology to support our fellow Hokies. 
+            In a day and a half, we developed a website designed 
+            specifically for Virginia Tech students looking for off-campus housing.
+            With MongoDB for data management and Python with Flask for backend services,
+            we efficiently split our tasks between backend and frontend development. 
+            Despite facing challenges with integrating these components, we successfully 
+            connected them through careful debugging and collaboration. 
+            We used GitHub for version control and Visual Studio Code’s Live Share
+            feature to collaborate in real-time. Our commitment to helping our classmates
+            is at the heart of our project, and we’re excited to add features like favorites
+            and login to enhance the user experience. Our goal is to make finding the perfect 
+            apartment a seamless and enjoyable process for all Hokies.
+            
+        </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+ 
+
+<!--this is the photo-->
+<div class="container">
+  <div class="the-white-box">
+    <div class="the-flex-container">
+      <div class="the-flex-item-left">
+        <img class="logo" src="{{ url_for('static', filename='images/logo_image.png') }}" alt="logo">  
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+  

@@ -1,245 +1,223 @@
 <!DOCTYPE html>
+
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hokies Way Home</title>
-<!-- <link rel="stylesheet" href="https://dtahero/hokiesWayHome/flask-html-app/styles.css"> -->
-<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+  <title>Hokies Way Home</title>
 
-<style>
-  body {
-    background-image: url('https://github.com/dtahero/hokiesWayHome/blob/main/flask-html-app/static/images/main_image2.jpg?raw=true');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-  }
-  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet">
 
-  *{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
-}
-h1{
-  color: rgb(101, 15, 9);
-  text-align: center;
-  font-size: 40px;
-  font-family: IBM Plex Serif;
-  margin:0;
-  
-}
+  <style>
+    body {
+      background-image: url('https://github.com/dtahero/hokiesWayHome/blob/main/flask-html-app/static/images/main_image2.jpg?raw=true');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
 
-.container{
-  width:100%;
-  height: 100%;
-  /*padding: 15%;*/
-  background: linear-gradient(rgba(164, 32, 9, 0.6), rgba(220, 108, 4, 0.6));
-  background-position: center;
-  background-size: cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-}
+    h1 {
+      color: rgb(101, 15, 9);
+      text-align: center;
+      font-size: 40px;
+      font-family: IBM Plex Serif;
+      margin: 0;
+    }
 
+    .container {
+      width: 100%;
+      height: 100%;
+      /*padding: 15%;*/
+      background: linear-gradient(rgba(164, 32, 9, 0.6), rgba(220, 108, 4, 0.6));
+      background-position: center;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
 
+    .white-box {
+      background-color: white;
+      padding: 5%;
+      /* Adds padding inside the box */
+      border-radius: 20%;
+      /* Rounds the corners 15% */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      /* Optional shadow for a slight 3D effect */
+      display: flex;
+      flex-direction: row;
+      height: 500px;
+      width: 100%;
+      /*Adjusts the width of the box */
+      margin: 20px auto;
+    }
 
-.main_picture{
-  border-radius: 10px;
-  height: 100%;
-  width: 100%;
-}
+    .topnav {
+      background-color: rgb(134, 31, 65);
+      overflow: hidden;
+    }
 
-.search-bar{
-  width: 100%;
-  max-width: 700px;
-  background: rgb(255, 255, 255, 0.2);
-  display: flex;
-  align-items: top;
-  border-radius: 60px;
-  padding: 10px, 20px;
-}
+    .topnav a {
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
 
-.search-bar input{
-  background: transparent;
-  flex: 1;
-  border: 0;
-  outline: none;
-  padding: 24px, 20px;
-  font-size: 20px;
-  color: #cac7ff
-  
-}
+    .topnav a:hover {
+      background-color: rgb(134, 31, 65);
+      color: rgb(255, 255, 255);
+    }
 
-.white-box {
-  background-color: white;
+    .topnav a.active {
+      background-color: rgb(134, 31, 65);
+      color: rgb(252, 252, 252);
+    }
 
-  padding: 5%; /* Adds padding inside the box */
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      /* Centers the image horizontally */
+      align-items: center;
+      /* (Optional) Centers the image vertically if the container has a set height */
+    }
 
-  border-radius: 13%; /* Rounds the corners 15% */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for a slight 3D effect */
-  display: flex;
-  flex-direction: row;
-  height: 1000px;
-  /*width: calc(10);  Adjusts the width of the box */
-  margin: 20% auto;
-}
+    .logo {
+      width: 100%;
+      /* Set the logo size to 30% of its parent container */
+      height: 100%;
+      /*max-width: 100%;  Ensures the image doesn't get larger than the original size */
+      justify-content: center;
 
+    }
 
-#navigationbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+    .listings_list {
+      flex-wrap: wrap; /* Allows items to wrap on new lines if necessary */
+      gap: 10px; /* Spacing between the items */
+      list-style-type: none; /* Removes default bullets */
+      padding: 0;
+      margin: 0;
+      margin-left: auto;
+      margin-right: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-.search-bar input {
-  padding: 5px;
-  border-radius: 5px;
-}
+    .item-card {
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 10px; /* Rounded corners */
+      padding: 50px;
+      width: 80%; /* Card width */
+      text-align: center; /* Centers the text */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a shadow */
+      transition: transform 0.3s ease; /* Animation for hover effect */
+      margin: 5%;
+      
+    }
 
-.search-bar button {
-  padding: 5px;
-  border-radius: 5px;
-}
+    .item-card:hover {
+      transform: translateY(-5px); /* Lifts the card when hovered */
+    }
 
+    .itt {
+      display: flex;
+      justify-content: center; /* Centers horizontally */
+      align-items: center; /* Centers vertically */
+      font-family: IBM Plex Serif;
+      font-size: 32px;
+      text-decoration: none;
+      color: black;
+    }
 
-img.main_picture {
-  max-width: 100%; /* Ensures the image stays within the box */
-  border-radius: 10px; /* Optional rounded corners for the image */
-}
+    .item-card p {
+      
+      margin: 0;
+      font-size: 32px;
+      color: #333;
+      .flex-container {
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 30px;
+        text-align: center;
+      }
 
-.topnav {
-  background-color: rgb(134, 31, 65);
-  overflow: hidden;
-}
+    .flex-item-left {
+        background-color: #f1f1f1;
+        padding: 10px;
+        flex: 50%;
+      }
 
-.topnav a {
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
+    .flex-item-right {
+        background-color: dodgerblue;
+        padding: 10px;
+        flex: 50%;
+      }
+    }
 
-.topnav a:hover {
-  background-color: rgb(134, 31, 65);
-  color: rgb(255, 255, 255);
-}
+  </style>
 
-.topnav a.active {
-  background-color: rgb(134, 31, 65);
-  color: rgb(252, 252, 252);
-}
-
-.listings_list {
-
-    flex-wrap: wrap; /* Allows items to wrap on new lines if necessary */
-    gap: 20px; /* Spacing between the items */
-    list-style-type: none; /* Removes default bullets */
-
-    padding: 0;
-    margin: 0;
-    justify-content: center;
-}
-
-.logo-container {
-  display: flex;
-  justify-content: center; /* Centers the image horizontally */
-  align-items: center;     /* (Optional) Centers the image vertically if the container has a set height */
-}
-
-.logo {
-  width: 40%; /* Set the logo size to 30% of its parent container */
-  max-width: 100%; /* Ensures the image doesn't get larger than the original size */
-}
-
-.item-card {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-
-    border-radius: 10px; /* Rounded corners */
-    padding: 20px;
-    width: 40%; /* Card width */
-    text-align: center; /* Centers the text */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
-    transition: transform 0.3s ease; /* Animation for hover effect */
-
-    margin: 5%;
-}
-
-.item-card:hover {
-
-    transform: translateY(-5px); /* Lifts the card when hovered */
-
-.cent {
-  text-align: center;
-}
-
-.item-card p {
-    margin: 0;
-    font-size: 16px;
-    color: #333;
-}
-}
-</style>
 
 </head>
-  <body>
-    <header>
-      <h1>Hokies Way Home</h1>
-      </header>
-<!--navigation bar-->
-    <div class="topnav">
-      <a class="active" href="index.html">Home</a>
-      <a href="#news">Profile</a>
-      <a href="#contact">Login</a>
-      <a href="#about">Contact</a>
-      
-    </div>
-    <!-- <div class="content"><img class="main_picture" src="https://github.com/dtahero/hokiesWayHome/blob/main/flask-html-app/static/images/main_image2.jpg?raw=true"></div> -->
-    
-    
-<!--main page/search bar-->
-    <div class="container">
 
-           
-      <div class = "white-box">
+<body>
+  <header>
+    <h1>Hokies Way Home</h1>
+  </header>
 
-        <h1>Your new home away from home.</h1>
-        <p></p>
-        <ul>
-        <nav id = "navigationbar">
-          <!--<h2 class="logo"> <!<a href="main_page.html"></a>-->
-            <img class = "logo" src="https://github.com/dtahero/hokiesWayHome/blob/main/flask-html-app/static/images/logo_image.png?raw=true" alt="logo">
-          <!--</h2>-->
-        </ul>
-            <!--<li><a href="favorites.html">Favorites</a> </li>
-            <li><a href="profile.html">Profile</a> </li>-->
-          </ul>
-        </nav>
-      
-      <form action="" class="search-bar">
-        <input type="text" placeholder="search" name="q">
-        <button type="submit"></button>
-      </form>
-      
-    </div>
-    <ul class="listings_list">
+  <!--navigation bar-->
+  <div class="topnav">
+    <a class="active" href="{{url_for('home')}}">Home</a>
+    <a href="#news">Profile</a>
+    <a href="{{url_for('aboutus')}}">About Us</a>
+    <a href="#contact">Contact</a>
+  </div>
 
-      {% for listing in listings %}
+  <!--main page/search bar-->
+  <div class="container">
+    <ul>
+      <div class="white-box">
+        <div class="flex-container">
+          <div class="flex-item-left">
+            <h2>Your new home away from home.</h2>
+          </div>
+          <div class="flex-item-right">
+            <img class="logo" src="{{ url_for('static', filename='images/logo_image.png') }}" alt="logo">
+          </div>
+        </div>
+
+      </div>
+
+
+
+      <!--list of apartment listings-->
+      <div>
+        <ul class="listings_list">
+          {% for listing in listings %}
           <li class="item-card">
-              <a href="{{ url_for('listingdisplay', listing_name=listing.name)}}">{{ listing.name }}</a>
+            <a class="itt" href="{{ url_for('listingdisplay', listing_name=listing.name)}}">{{ listing.name }}</a>
           </li>
-      {% endfor %}
-
-  </ul>
-  
-    
-  </body>
+          {% endfor %}
+        </ul>
+      </div>
+    </ul>
+  </div>
+</body>
 </html>

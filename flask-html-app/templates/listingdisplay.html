@@ -2,206 +2,211 @@
 
 <!DOCTYPE html>
 <html>
+
 <head>
-    
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hokies Way Home</title>
-<!-- <link rel="stylesheet" href="https://dtahero/hokiesWayHome/flask-html-app/styles.css"> -->
-<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+  <title>Hokies Way Home</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--Fonts-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-<title>Print List Items</title>
+  <!--Title for Wesbite-->
+  <title>Print List Items</title>
 
 
-<style>
-    
-*{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-/* Add a background color to the top navigation */
-.topnav {
-  background-color: rgb(134, 31, 65);
-  overflow: hidden;
-}
+  <style>
+    * {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
-/* Style the links inside the navigation bar */
-.topnav a {
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
+    /*body formatting*/
+    body {
+      background: linear-gradient(rgba(220, 108, 4, 1), rgba(164, 32, 9, 1));
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
 
-/* Change the color of links on hover */
-.topnav a:hover {
-  background-color: rgb(134, 31, 65);
-  color: rgb(255, 255, 255);
-}
+    /* Add a background color to the top navigation */
+    .topnav {
+      background-color: rgb(134, 31, 65);
+      overflow: hidden;
+    }
 
-/* Add a color to the active/current link */
-.topnav a.active {
-  background-color: rgb(134, 31, 65);
-  color: rgb(252, 252, 252);
-}
+    /* Style the links inside the navigation bar */
+    .topnav a {
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
 
-.nav{
-  background-color: rgb(174, 69, 69);
-}
-.list-container{
-    margin-top: 50px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-.left-col{
-    flex-basis: 70%;
-    margin: 0;
-}
-.right-col{
-    flex-basis: 25%;
-}
-.left-col h1{
-    color:#333;
-    font-weight: 600 ;
-    margin-bottom: 30px;
-    
-}
-.house{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    padding: 100px ;
-    border-top: 1px solid #ccc;
-    margin-top: 40%;
-}
-.house-img{
-    flex-basis: 40%;
-    float: left;
-}
-.house-info{
-    flex-basis: 40%;
-    color:#000000;
-    padding-left: 10%;  
-     
-}
-.house-img img{
-    width: 642px;
-    height: 312px;
-    border-radius: 12px;
-}
-.house-info h3{
-    font-weight:600;
-    color: #333;
-    font-size: 22px;
-    margin: 4px 0;
-   
-}
-.house-price{
-    text-align: right;
-}
+    /* Change the color of links on hover */
+    .topnav a:hover {
+      background-color: rgb(134, 31, 65);
+      color: rgb(255, 255, 255);
+    }
+
+    /* Add a color to the active/current link */
+    .topnav a.active {
+      background-color: rgb(134, 31, 65);
+      color: rgb(252, 252, 252);
+    }
+
+    /*Creates navigation color*/
+    .nav {
+      background-color: rgb(174, 69, 69);
+    }
+
+    .flex-container {
+      display: grid;
+      grid-template-columns: auto auto;
+      grid-template-rows: auto auto;
+      gap: 10px;
+      /*background-color: #630031;*/
+      padding: 10px;
+    }
+
+    .flex-container>div {
+      /*background-color: rgba(174, 69, 69, 0.6);*/
+      text-align: center;
+      padding: 20px 0;
+      font-size: 30px;
+    }
+
+    .flex-item-left {
+      background-color: #f1f1f1;
+      border-radius: 10%;
+      opacity: 90%;
+      padding: 10px;
+      flex: 50%;
+    }
+
+    /*
+.flex-item-right {
+  background-color: dodgerblue;
+  padding: 10px;
+  flex: 50%;
+}*/
+
+    .house {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      border-radius: 50%;
+
+    }
 
 
+    .house-img {
 
+      /*flex-basis: 10%;*/
+      padding: 1%;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
+    /*Housing info*/
+    .house-info {
+      margin-left: auto;
+      margin-right: auto;
+      flex-basis: 40%;
+      color: #000000;
+      padding: 1%;
+      font-size: 50%;
+    }
 
+    .house-info h3 {
+      font-weight: 600;
+      color: #333;
+      font-size: 22px;
+      margin: 4px 0;
 
-</style>
+    }
+
+    .house-price {
+      text-align: right;
+    }
+
+    h1 {
+      color: rgb(101, 15, 9);
+      text-align: center;
+      font-size: 40px;
+      font-family: IBM Plex Serif;
+      margin: 0;
+      padding-top: 0;
+      background-color: #f1f1f1;
+
+    }
+  </style>
+
 
 </head>
-<body> 
-<!--this is adding the navigation bar back at the top-->
+<!--Start of body-->
 
-<div class="topnav">
-    <li><a class="active" href="#home">Home</a></li>
-    <a href="#profile">Profile</a>
-    <a href="#login">Login</a>
-    </h2>
+<body>
+
+  <h1>Hokies Way Home</h1>
+  <!--navigation bar-->
+  <div class="topnav">
+    <a class="active" href="{{url_for('home')}}">Home</a>
+    <a href="#news">Profile</a>
+    <a href="{{url_for('aboutus')}}">About Us</a>
+    <a href="#contact">Contact</a>
   </div>
 
-  <div class="list container">
-    
+  <!--This will have the name, and the name of the price under it -->
+  <div class="house">
+    <div class="house-img">
+      <img
+        src="https://github.com/dtahero/hokiesWayHome/blob/main/flask-html-app/static/images/main_image2.jpg?raw=true">
+      <!--<img src="https://github.com/dtahero/hokiesWayHome/blob/main/flask-html-app/static/images/main_image2.jpg?raw=true" alt="https://github.com/dtahero/hokiesWayHome/blob/main/flask-html-app/static/images/main_image2.jpg?raw=true" style="position: absolute; top: 130px; right: 500px; z-index: 1;" /> -->
+    </div>
+  </div>
+
+  <div class="flex-container">
     <div>
+      <div class="flex-item-left">
         <h1>{{listing.name}}</h1>
         <h2><strong>${{listing.monthly_rent}}</strong> /month</strong></h2>
-    
+      </div>
     </div>
-    
-    
-    <div class="left-col">
-       
-        
-        <div class="house">
-            <div class="house-img">
-                <img src="https://github.com/dtahero/hokiesWayHome/blob/main/flask-html-app/static/images/main_image2.jpg?raw=true">
-                <img src="https://github.com/dtahero/hokiesWayHome/blob/main/flask-html-app/static/images/main_image2.jpg?raw=true" alt="https://github.com/dtahero/hokiesWayHome/blob/main/flask-html-app/static/images/main_image2.jpg?raw=true" style="position: absolute; top: 130px; right: 500px; z-index: 1;" /> 
 
-            </div>
-            
+    <div>
+
+      <!--It will have the side information that is not that important-->
+      <div class="house-info">
+        <h2> Address: {{listing.address[0]}} <br> {{listing.address[1]}}</h2>
+        <hr>
+        <h3> <strong>Information</strong> </h3>
+        <hr>
+        <p>Official Website: {{listing.website}}</p>
+        <p>Utilities: {{listing.utilities}}</p>
+        <p>Bathroom(s) / Bedroom(s)</p>
+        <div class="house-price">
         </div>
-        <div class="house-info">
-            <h2> Address: {{listing.address[0]}} <br> {{listing.address[1]}}</h2>
-            <hr>
-            <h3> <strong>Information</strong> </h3>
-            <hr>
-            <p>Official Website: {{listing.website}}</p>
-            <p>Utilities: {{listing.utilities}}</p> 
-            <p>Bathroom(s) / Bedroom(s)</p>
-            <div class="house-price">
-                
-            </div>
-            
-            <p>Amenities</p>
-            
-  <!--          
-//<div id="list-container"></div>
-    <script>
-                // List of items
-                const items = ['Item 1', 'Item 2', 'Item 3', 'Item 4'];
-        
-                // Get the container element
-                const container = document.getElementById('list-container');
-        
-                // Loop through the items and create a new line for each
-                items.forEach(item => {
-                    // Create a new <div> element for each item
-                    const itemElement = document.createElement('div');
-                    itemElement.textContent = item; // Set the text content
-                    
-                    // Optionally, add some styling
-                    itemElement.style.margin = '10px 0';
-                    
-                    // Append the new element to the container
-                    container.appendChild(itemElement);
-                });
-            </script>
--->
-<h3> <strong>Other Details</strong></h3>
-<hr>
-<p>Requires Parking Pass: {{listing.parking_pass_needed}}</p>
-<p>Distance from Virginia Tech campus: {{listing.campus_distance}} minutes</p>
-<p>Nearest Grocery Store: {{listing.grocery_store_distance}} minutes</p>
-<p>Nearest Blackburg Transit Stop: {{listing.bus_stop_distance}} minutes</p>  
-        
+      
+        <p>Amenities</p>
+        <!--Lists out the other details section-->
+        <h3> <strong>Other Details</strong></h3>
+        <hr>
+        <p>Requires Parking Pass: {{listing.parking_pass_needed}}</p>
+        <p>Distance from Virginia Tech campus: {{listing.campus_distance}} minutes</p>
+        <p>Nearest Grocery Store: {{listing.grocery_store_distance}} minutes</p>
+        <p>Nearest Blackburg Transit Stop: {{listing.bus_stop_distance}} minutes</p>
+      </div>
     </div>
-</div>
-
-
-    <div class="right-col"></div>
   </div>
 
-
 </body>
+
 </html>
