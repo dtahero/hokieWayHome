@@ -68,6 +68,7 @@
 }
 .left-col{
     flex-basis: 70%;
+    margin: 0;
 }
 .right-col{
     flex-basis: 25%;
@@ -76,24 +77,29 @@
     color:#333;
     font-weight: 600 ;
     margin-bottom: 30px;
+    
 }
 .house{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    padding: 30px 0;
+    padding: 100px ;
     border-top: 1px solid #ccc;
+    margin-top: 40%;
 }
 .house-img{
     flex-basis: 40%;
     float: left;
 }
 .house-info{
-    flex-basis: 58%;
-    color:#555;   
+    flex-basis: 40%;
+    color:#000000;
+    padding-left: 10%;  
+     
 }
 .house-img img{
-    width: 100%;
+    width: 642px;
+    height: 312px;
     border-radius: 12px;
 }
 .house-info h3{
@@ -101,6 +107,7 @@
     color: #333;
     font-size: 22px;
     margin: 4px 0;
+   
 }
 .house-price{
     text-align: right;
@@ -118,28 +125,39 @@
 <!--this is adding the navigation bar back at the top-->
 
 <div class="topnav">
-    <a class="active" href="#home">Home</a>
+    <li><a class="active" href="#home">Home</a></li>
     <a href="#profile">Profile</a>
-    <a href="#about">Login</a>
+    <a href="#login">Login</a>
     </h2>
   </div>
 
   <div class="list container">
-    <h1>{{listing.name}}</h1>
+    
+    <div>
+        <h1>{{listing.name}}</h1>
+        <h2><strong>${{listing.monthly_rent}}</strong> /month</strong></h2>
+    
+    </div>
+    
+    
     <div class="left-col">
+       
         
         <div class="house">
             <div class="house-img">
-                <img src="static/images/main_image.png">
+                <img src="https://github.com/dtahero/hokiesWayHome/blob/main/flask-html-app/static/images/main_image2.jpg?raw=true">
+                <img src="https://github.com/dtahero/hokiesWayHome/blob/main/flask-html-app/static/images/main_image2.jpg?raw=true" alt="https://github.com/dtahero/hokiesWayHome/blob/main/flask-html-app/static/images/main_image2.jpg?raw=true" style="position: absolute; top: 130px; right: 500px; z-index: 1;" /> 
+
             </div>
-            <h3><strong>${{listing.price}}</strong> price/month</strong></h3>
+            
         </div>
         <div class="house-info">
             <h2> Address: {{listing.address[0]}} <br> {{listing.address[1]}}</h2>
             <hr>
             <h3> <strong>Information</strong> </h3>
             <hr>
-            <p>Utilities:</p> 
+            <p>Official Website: {{listing.website}}</p>
+            <p>Utilities: {{listing.utilities}}</p> 
             <p>Bathroom(s) / Bedroom(s)</p>
             <div class="house-price">
                 
@@ -172,11 +190,10 @@
 -->
 <h3> <strong>Other Details</strong></h3>
 <hr>
-<p>Parking Pass Required:</p>
-<p>Distance from Virginia Tech campus:</p>
-<p>Nearest Grocery Store:</p>
-<p>Official Website:</p>  
-<p>Nearest Blackburg Transit Stop:</p>  
+<p>Requires Parking Pass: {{listing.parking_pass_needed}}</p>
+<p>Distance from Virginia Tech campus: {{listing.campus_distance}} minutes</p>
+<p>Nearest Grocery Store: {{listing.grocery_store_distance}} minutes</p>
+<p>Nearest Blackburg Transit Stop: {{listing.bus_stop_distance}} minutes</p>  
         
     </div>
 </div>

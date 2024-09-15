@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify, redirect, url_for
+from flask import Flask, render_template, request, jsonify
 from flask_pymongo import PyMongo
 
 import listing 
@@ -7,24 +7,12 @@ app = Flask(__name__, static_folder='flask-html-app\static')
 app.config["MONGO_URI"] = "mongodb://localhost:27017/hokie_way_db"
 mongo = PyMongo(app)
 
-mongo.db.create_collection('location_data')
 mongo.db.location_data.drop()
 
-listing.add_listing(mongo, "Foxridge", "1111 place dr", "wwww.place.com", 
-            2, 3, 700.0, ["gas, electricity, internet"], ["pool, gym"], 12, 15, 2, 
-            "not a real filepath", True)
-
-listing.add_listing(mongo, "Hunters Ridge", "1111 place dr", "wwww.place.com", 
-            2, 3, 700.0, ["gas, electricity"], ["gym, outdoor common area"], 12, 15, 2, 
-            "not a real filepath", True)
-
-listing.add_listing(mongo, "The Hub", "1111 place dr", "wwww.place.com", 
-            2, 3, 700.0, ["gas, electricity"], ["pool"], 12, 15, 2, 
-            "not a real filepath", True)
+listing.add_listing_data(mongo)
 
 @app.route('/')
 def home():
-
     listings = list(mongo.db.location_data.find())
     return render_template('index.html', listings=listings)  # Render the index.html file
 
@@ -50,7 +38,7 @@ def listingdisplay(listing_name):
     if listing:
         return render_template('listingdisplay.html', listing=listing)
     else:
-        return redirect(url_for('/'))
+        return render_template('404.html'), 404
 
 
 """
